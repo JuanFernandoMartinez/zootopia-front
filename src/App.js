@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import  './App.css';
+import React from 'react';
+import Menu from './components/Menu';
+import Create from './components/Create';
+import List from './components/List';
+import Search from './components/Search';
+
+class App extends React.Component{
+  
+  constructor(props){
+    super(props)
+    this.state = {
+      currentPage: 1
+    }
+  }
+  changePage = e=>{
+    this.setState({
+      currentPage:e.target.name
+    })
+  }
+
+  
+  
+  render() {
+    switch (this.state.currentPage){
+      case "create": return <Menu changer = {this.changePage}><Create></Create></Menu>
+      case "list": return <Menu changer = {this.changePage}><List></List></Menu> 
+      case "search": return <Menu changer = {this.changePage}><Search></Search></Menu>
+      default: return <Menu changer = {this.changePage}><Create></Create></Menu>
+
+    }
+    
+  }
 }
+
+
+
 
 export default App;
