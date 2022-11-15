@@ -1,3 +1,10 @@
+
+/**
+ * 
+ * @param {string} url url to send the request  
+ * @param {object} obj object destinated to the API
+ * @returns response from the API
+ */
 async function postPrayer(url,obj){
     let res = await fetch(url,{
         method : "POST",

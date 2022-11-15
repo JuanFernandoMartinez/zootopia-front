@@ -13,7 +13,7 @@ export default class List extends React.Component{
 
     getData = async ()=>{
         let res = await getPrayer("http://localhost:8081/animals")
-        console.log(res)
+        
         
         this.setState({
             data: res
