@@ -1,6 +1,7 @@
 
 import React from "react"
 import {getPrayer} from '../util/communicator'
+import './css/List.css'
 
 
 export default class List extends React.Component{
@@ -25,7 +26,7 @@ export default class List extends React.Component{
         this.getData()
         return ( 
             <div>
-                
+                <img src = "/logo192.png" atl="Sorry"></img>
                 <h1 className="text-center mt-5">
                     Animals
                 </h1>
