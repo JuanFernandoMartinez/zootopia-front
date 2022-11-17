@@ -54,8 +54,8 @@ export default class create extends React.Component{
 
     render(){
         return (
-            <div>
-                <form className="form w-25 m-auto card p-3 shadow" onSubmit={this.handleSubmit}>
+            <div >
+                <form className="form w-25 m-auto card p-3 shadow bg-success " onSubmit={this.handleSubmit}>
 
                     <h1 className ="text-center">Create Animal</h1>
 
@@ -80,9 +80,9 @@ export default class create extends React.Component{
 
                     <div className ="mb-3">
                     <label htmlFor="sex" className="form-label">Sex</label>
-                    &nbsp;
+                    <br/>
                     <select id = "sex" name = "sex" onChange={this.handleChange} 
-                    className = "btn border-dark dropdown-togle w-25 text-center ml-2" 
+                    className = "btn border-dark dropdown-togle w-25 text-center ml-2 bg-white" 
                     selected="F">
                         <option>F</option>
                         <option>M</option>

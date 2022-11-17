@@ -26,12 +26,13 @@ export default class List extends React.Component{
         this.getData()
         return ( 
             <div>
-                <img src = "/logo192.png" atl="Sorry"></img>
+                
                 <h1 className="text-center mt-5">
                     Animals
                 </h1>
-                <table className = "table table-hover w-75 m-auto mt-3 border text-center p-1">
-                <thead>
+                <div >
+                <table className = "table table-hover w-75 m-auto mt-3 border text-center p-1 shadow p-3">
+                <thead className = "bg-success">
                     <tr>
                         <th scope="col">Id</th>
                         <th scope="col">Father Id</th>
@@ -77,6 +78,7 @@ export default class List extends React.Component{
                     </tr>)}
                        </tbody>
                 </table>
+                </div>
             </div>
         )
     }

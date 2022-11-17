@@ -44,23 +44,31 @@ export default class Search extends React.Component {
     }
     render(){
         return ( 
-            <div className = "w-50 m-auto">
+            <div className = "w-25 m-auto shadow p-5 rounded bg-success">
                 <h1 className = "text-center">Search</h1>
+                
+                <img 
+                src = "https://hoycuriosidades.com/wp-content/uploads/2021/05/anaconda.jpg"
+                className="w-100 mb-3 rounded"
+                alt ="sorry"
+                ></img>
+            
+                
                 <form onSubmit={this.handleSubmit} className = "d-inline w-75 m-auto">
                 <input type = "text" 
-                placeholder = "Animal ID" 
+                placeholder = "Animal Name" 
                 value = {this.idField} 
                 onChange ={this.handleChange}
-                className="w-75 m-auto form-control"
+                className="w-100  form-control"
                 
                 />
-                <div className = "w-75 m-auto mt-3">
+                <div className = "w-100 mt-3">
                 <button className = "btn btn-primary w-100" type = "submit">Search</button>
                 </div>
                 
                 </form>
 
-                <div className = "Card p-3 w-75  mt-3 shadow m-auto">
+                <div className = "Card p-3 w-100  mt-3 shadow rounded bg-white ">
                     <div>
                         <b>ID:</b>&nbsp;&nbsp; {this.state.animalData.id} 
                     </div>
