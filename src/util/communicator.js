@@ -14,10 +14,10 @@ async function postPrayer(url,obj){
         },
         body : JSON.stringify(obj)
     })
-
+    
     let response = await res.json()
-
-    return response
+    let status = res.status
+    return {...response, status}
 }
 
 async function getPrayer(url){

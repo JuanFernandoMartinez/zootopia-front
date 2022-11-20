@@ -15,6 +15,8 @@ export default class create extends React.Component{
                 weight:"",
                 height:"",
                 arrivalDate:"",
+                fatherId: undefined,
+                motherId: undefined
                 
             }
         }
@@ -24,7 +26,29 @@ export default class create extends React.Component{
         e.preventDefault();
         
         let response = await postPrayer("http://localhost:8081/animals",this.state.form);
-        console.log(response)
+        if (response.status === 201) {
+            alert("Animal created successfully")
+            this.setState({
+                form: {
+                    name:"",
+                    age:"",
+                    sex:"F",
+                    weight:"",
+                    height:"",
+                    arrivalDate:"",
+                    fatherId: undefined,
+                    motherId: undefined
+                    
+                }
+            })
+        }else{
+            let errors = []
+            for (const [key, value] of Object.entries(response)) {
+                errors.push(`${value}`)
+                
+              }
+              alert(errors[0])
+        }
     }
 
     handleChange = e=>{
@@ -120,6 +144,27 @@ export default class create extends React.Component{
                     <input id="arrivalLabel" value = {this.state.form.arrivalDate} disabled>
                         
                         </input>
+                    </div>
+
+                    <br>
+                    </br>
+
+                    <div className ="mb-3">
+                    <label htmlFor="fatherId" className="form-label">Father Id</label>
+                    <input type ="text"  name ="fatherId" 
+                    id="fatherId" className="form-control w-75 text-center" 
+                    onChange = {this.handleChange} 
+                    value = {this.state.form.fatherId}>
+                    </input>
+                    </div>
+
+                    <div className ="mb-3">
+                    <label htmlFor="motherId" className="form-label">height</label>
+                    <input type ="text"  name ="motherId" 
+                    id="motherId" className="form-control w-75 text-center" 
+                    onChange = {this.handleChange} 
+                    value = {this.state.form.motherId}>
+                    </input>
                     </div>
 
                     
